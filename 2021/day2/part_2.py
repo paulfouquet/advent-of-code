@@ -3,26 +3,28 @@ from typing import List
 
 
 def get_final_position(input: List[str]) -> int:
-    forward = 0
+    horizontal = 0
+    aim = 0
     depth = 0
 
     for i in range(0, len(input)):
         current_input = input[i].split()
         direction = current_input[0]
         units = int(current_input[1])
-
-        # FIXME: Python 3.10 has a match-case statement
+        
+        #FIXME: Python 3.10 has a match-case statement
         if direction == "forward":
-            forward = forward + units
+            horizontal = horizontal + units
+            if aim > 0:
+                depth = depth + aim * units
         elif direction == "down":
-            depth = depth + units
+            aim = aim + units
         elif direction == "up":
-            depth = depth - units
+            aim = aim - units
         else:
             print("unknow direction")
-
-    return forward * depth
-
+    
+    return depth * horizontal
 
 def main():
     data = []
@@ -34,7 +36,6 @@ def main():
             data.append(line)
 
     print(get_final_position(data))
-
 
 if __name__ == "__main__":
     main()

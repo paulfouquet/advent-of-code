@@ -1,7 +1,7 @@
 import os
 
 import pytest
-from day2.part_1 import get_final_position
+from day2.part_2 import get_final_position
 
 
 def test_get_final_position():
@@ -13,4 +13,4 @@ def test_get_final_position():
         while line := file.readline().rstrip():
             data.append(line)
 
-    assert get_final_position(data) == 150
+    assert get_final_position(data) == 900

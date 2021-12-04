@@ -7,6 +7,9 @@ authors = ["Paul Fouquet <pfouquet@linz.govt.nz>"]
 [tool.poetry.dependencies]
 python = "^3.9"
 pytest = "^6.2.5"
+black = "^21.11b1"
+isort = "^5.10.1"
+mypy = "^0.910"
 
 [tool.poetry.dev-dependencies]
 
