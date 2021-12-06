@@ -11,8 +11,8 @@ def get_final_position(input: List[str]) -> int:
         current_input = input[i].split()
         direction = current_input[0]
         units = int(current_input[1])
-        
-        #FIXME: Python 3.10 has a match-case statement
+
+        # FIXME: Python 3.10 has a match-case statement
         if direction == "forward":
             horizontal = horizontal + units
             if aim > 0:
@@ -23,8 +23,9 @@ def get_final_position(input: List[str]) -> int:
             aim = aim - units
         else:
             print("unknow direction")
-    
+
     return depth * horizontal
+
 
 def main():
     data = []
@@ -36,6 +37,7 @@ def main():
             data.append(line)
 
     print(get_final_position(data))
+
 
 if __name__ == "__main__":
     main()
