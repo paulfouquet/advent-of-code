@@ -22,9 +22,6 @@ def get_rating(data: List[str], most_common: bool) -> int:
                 if count_one < count_zero:
                     bit_criteria = "1"
 
-            print(f"Bit Criteria is {bit_criteria}")
-            print(f"Most Common Bit is {bit_criteria}")
-
             for element in data:
                 print(element)
                 if not str(element[i]) == bit_criteria:
